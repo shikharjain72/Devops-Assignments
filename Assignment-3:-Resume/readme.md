@@ -6,45 +6,21 @@ This project is a minimal Flask application that serves a static HTML page.
 
 - Python 3.9+ installed
 
-## Run Locally
-
-1. Create and activate a virtual environment:
+## Run App (Gunicorn on 8080)
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+./run.sh
 ```
 
-2. Install dependencies:
+Or manually:
 
 ```bash
+python3 -m venv "$HOME/.venvs/assignment3_resume"
+source "$HOME/.venvs/assignment3_resume/bin/activate"
 pip install -r requirements.txt
+gunicorn -w 2 -b 0.0.0.0:8080 app:app
 ```
+Open in browser:
 
-3. Run the app:
-
-```bash
-python app.py
-```
-
-4. Open in browser:
-
-`http://127.0.0.1:80` (local) or `http://<EC2_ELASTIC_IP>:80` (EC2)
-
-## Run with Gunicorn (EC2/Production)
-
-1. Ensure dependencies are installed:
-
-```bash
-pip install -r requirements.txt
-```
-
-2. Start Gunicorn bound to all interfaces:
-
-```bash
-gunicorn -w 2 -b 0.0.0.0:80 app:app
-```
-
-3. Open in browser:
-
-`http://<EC2_ELASTIC_IP>:80`
+- `http://127.0.0.1:8080` (local)
+- `http://<EC2_ELASTIC_IP>:8080` (EC2)

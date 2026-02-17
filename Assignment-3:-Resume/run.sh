@@ -10,5 +10,6 @@ source "$VENV_DIR/bin/activate"
 
 pip install -r requirements.txt
 
-PORT="${PORT:-80}"
+PORT="${PORT:-8080}"
+
 exec gunicorn -w 2 -b "0.0.0.0:${PORT}" app:app
