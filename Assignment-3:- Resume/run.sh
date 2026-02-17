@@ -10,4 +10,4 @@ python app.py
 pip install -r requirements.txt
 
 
-gunicorn -w 2 -b 0.0.0.0:8080 app:app
+gunicorn -w 2 -b 0.0.0.0:80 app:app
