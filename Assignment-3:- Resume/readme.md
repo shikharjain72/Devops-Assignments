@@ -29,7 +29,7 @@ python app.py
 
 4. Open in browser:
 
-`http://127.0.0.1:5001` (local) or `http://<EC2_ELASTIC_IP>:5001` (EC2)
+`http://127.0.0.1:8080` (local) or `http://<EC2_ELASTIC_IP>:8080` (EC2)
 
 ## Run with Gunicorn (EC2/Production)
 
@@ -42,9 +42,9 @@ pip install -r requirements.txt
 2. Start Gunicorn bound to all interfaces:
 
 ```bash
-gunicorn -w 2 -b 0.0.0.0:5001 app:app
+gunicorn -w 2 -b 0.0.0.0:8080 app:app
 ```
 
 3. Open in browser:
 
-`http://<EC2_ELASTIC_IP>:5001`
+`http://<EC2_ELASTIC_IP>:8080`
