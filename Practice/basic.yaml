@@ -1,0 +1,12 @@
+# list fruites: [apples, oranges, bananas] , my_skills: [python, java, c++]
+
+myself:
+  name: Shiihar Jain
+  age: 25
+  hobbies:
+    - reading
+    - coding      
+    - hiking
+  skills:
+    - python
+    - java    
