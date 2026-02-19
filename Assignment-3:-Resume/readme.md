@@ -21,7 +21,31 @@ pip install -r requirements.txt
 gunicorn -w 2 -b 0.0.0.0:8080 app:app
 ```
 
+
+```bash
+# Install Certbot for Let's Encrypt SSL certificate management
+sudo yum install certbot
+
+# Obtain SSL certificates for your domain(s)
+sudo certbot certonly --standalone -d yourdomain.com -d www.yourdomain.com
+
+
+# Configure Nginx with SSL certificates in port 443 section
+
+# Validate Nginx configuration syntax
+sudo nginx -t
+
+# Start or reload Nginx service
+sudo systemctl start nginx
+```
+
+
 Open in browser:
 
 - `http://127.0.0.1:8080` (local)
 - `http://<EC2_ELASTIC_IP>:8080` (EC2)
+
+for SSL 
+
+- `https://127.0.0.1:8080` (local)
+- `https://<EC2_ELASTIC_IP>:8080` (EC2)

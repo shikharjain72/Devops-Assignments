@@ -11,6 +11,16 @@ source "$VENV_DIR/bin/activate"
 
 pip install -r requirements.txt
 
+sudo yum install certbot
+
+sudo certbot certonly --standalone -d shikhardev.blog -d www.shikhardev.blog
+
+# nginx restart
+sudo nginx -t
+sudo systemctl start nginx
+
 PORT="${PORT:-8080}"
 
 exec gunicorn -w 2 -b "0.0.0.0:${PORT}" app:app
+
+```
