@@ -77,3 +77,6 @@ To start an EC2 instance for hosting a Flask application, follow these steps:
 ![alt text](<Screenshot 2026-02-21 at 2.21.54 AM.png>)
 
 ![alt text](<Screenshot 2026-02-21 at 2.25.55 AM.png>)
+
+I learned even if AI knows what to generate, it needs hand holding in walking step by step towards trouble shooting,
+if we put and run service file without killing existing processes of nginx, gunicorn, it will create issue while running service.
