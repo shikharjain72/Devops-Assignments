@@ -1,0 +1,21 @@
+[Unit]
+Description=Gunicorn service for Assignment-3 Resume app
+After=network.target
+
+[Service]
+Type=simple
+PermissionsStartOnly=true
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/Devops-Assignments/Assignment-3:-Resume
+Environment=PATH=/home/ec2-user/.venvs/assignment3_resume/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin
+Environment=PORT=8080
+ExecStartPre=-/usr/bin/systemctl stop nginx
+ExecStartPre=-/usr/bin/pkill -f 'gunicorn.*app:app'
+ExecStart=/bin/bash -lc 'set -e; VENV_DIR="${VENV_DIR:-$HOME/.venvs/assignment3_resume}"; PYTHON_BIN="${PYTHON_BIN:-python3}"; PORT="${PORT:-8080}"; mkdir -p "$(dirname "$VENV_DIR")"; "$PYTHON_BIN" -m venv "$VENV_DIR"; source "$VENV_DIR/bin/activate"; pip install -r requirements.txt; exec gunicorn -w 2 -b "0.0.0.0:${PORT}" app:app'
+ExecStop=-/usr/bin/pkill -f 'gunicorn.*app:app'
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
