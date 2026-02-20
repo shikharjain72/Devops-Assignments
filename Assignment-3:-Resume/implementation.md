@@ -71,3 +71,9 @@ To start an EC2 instance for hosting a Flask application, follow these steps:
 ![alt text](<Screenshot 2026-02-19 at 5.22.06 PM.png>) 
 ![alt text](<Screenshot 2026-02-19 at 6.38.35 PM.png>)
 ![alt text](<Screenshot 2026-02-19 at 6.36.25 PM.png>)
+
+11) Running Scripting as service
+
+![alt text](<Screenshot 2026-02-21 at 2.21.54 AM.png>)
+
+![alt text](<Screenshot 2026-02-21 at 2.25.55 AM.png>)
